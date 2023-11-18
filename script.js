@@ -79,3 +79,4 @@ let news =['ammi','rishi']
 // console.log(news.push("yog"))
 console.log(news.pop())
 console.log(news)
+console.log("Hello im arfeen")
