@@ -79,4 +79,67 @@ let news =['ammi','rishi']
 // console.log(news.push("yog"))
 console.log(news.pop())
 console.log(news)
-console.log("Hello im arfeen")
+//Loops
+
+// for(let i=1;i<10;i++){
+// console.log("Hello I'm trying to be a gd programmer ",i)
+// }
+// let dishs=['arfeen','ayaan','rishi']
+// for(let i=1;i<dishs.length;i++){
+//     console.log(dishs[i]);
+// }
+
+//while Loop
+let j=0
+while(j<5){
+    console.log("Hello sunshine ",j)
+    j++;
+}
+function nameOfFunction(){
+    console.log("Welcome to new function")
+}
+nameOfFunction()
+//functions
+let fun=function(name="imuu",time="night"){ //local variable
+    console.log(`Welcome ${name} to my function ${time}`)
+}
+fun()
+fun("Arfeen")
+fun("Ayaan")
+
+//function Expression
+
+ let fun1=function(){ //also called anonymous funtion
+//     console.log("Hi my sunshine")
+}
+fun1()
+// returning values
+let ageCalculation=function(birthyear,currentyr){
+let age1 = currentyr-birthyear;
+return age1;
+}
+console.log(ageCalculation(1999,2023))
+
+//Arrow Function
+let invitation=name=> `Welcome to my ${name} Arrow function`
+console.log(invitation("first"))
+
+//Passing Function as a Argument(Higher Order function exmple)
+let upperCase=function(str){
+    return str.toUpperCase()
+}
+let lowerCase=function(str){
+    return str.toLowerCase()
+}
+let trnsform=function(fun1,str){
+return fun1(str)
+}
+console.log(trnsform(upperCase,"hello"))
+
+//Function returns another function
+let compliment=function(msg){
+    return function(name){
+        console.log(`${msg} ${name}`)
+    }
+};
+console.log(compliment("Hello Welcome to Arfeen World")("Everyone"))
