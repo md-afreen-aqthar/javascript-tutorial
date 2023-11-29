@@ -143,3 +143,106 @@ let compliment=function(msg){
     }
 };
 console.log(compliment("Hello Welcome to Arfeen World")("Everyone"))
+
+//Higher order functions
+ const radius=[3,4,1,6]
+ const area=function(radius){
+     const output=[];
+    for(let i=0;i<radius.length;i++){
+        output.push(Math.PI * radius[i] * radius[i])
+    }
+    return output
+}; 
+console.log(area(radius))
+
+ const circum=function(radius){
+    const output=[]
+    for(let i=0;i<radius.length;i++){
+        output.push(2*Math.PI*radius[i])
+        
+    }
+    return output
+ }; console.log(circum(radius))
+
+//optimizin above code by using generic abstrction
+
+const area2=function(rad){
+    return Math.PI*rad*rad
+};
+const circums=function(rad){
+    return 2*Math.PI*rad
+};
+const rad=[3,4,1,6]
+const area1=function(rad,logic){
+    const output=[]
+    for(let i=0;i<rad.length;i++){
+        output.push(logic(rad[i]))
+    }
+    return output
+};
+console.log(area1(rad,area2));
+console.log(area1(rad,circums));
+
+//Function
+//Immediately Invoke function Expression
+//now this is expression
+(function(name){
+    console.log("Hello checkin function", name)
+})("Arfeen")
+
+// setTimeOut and setTImeInterval
+// setTimeOut -->runs after "once" after Interval of time
+// setTimeInterval -->runs repeatedly strting after the interval of time,then repeatedly
+//setTimeOut(func|code,delay,args1,args2,.....)
+function greeting(){
+    console.log("Lets hava look on setInterval , n hw it wrks")
+}
+setTimeout(greeting,5000) //whch means 1sec=1000 thrfore 5000ms=5sec
+
+// setInterval
+//setInterval(greeting,5000)
+
+//Hoisting
+// Variable "declaration" r "hosted toword" "top" of scope
+test=10
+console.log(test)
+var test
+
+//function declaration
+test1()
+function test1(){
+    console.log("Welcome to hoistin concept")
+}
+
+//Not function expression or arrow function
+/*test()
+let test=function(){
+    console.log("Welcom to Hoisting Concept in JS")
+}*/  //ths function doesnt support hoistin 
+
+//INTRODUCTION TO OBJECTs
+let car={
+    color:"blue",
+    model:"2022",
+    company:"Honda"
+}
+console.log(car)
+//Accessing property of object
+console.log(car["company"]);
+console.log(car.company);
+let propertyName="color";
+console.log(car[propertyName]);
+console.log(car.color);
+
+
+//Modify Object
+car.color="brown"
+console.log(car.color)
+
+//Delete properties of object
+let bike={
+    prop1:"bullet",
+    prop2:"KTM"
+}
+delete bike["prop1"]
+console.log(bike["prop1"])
