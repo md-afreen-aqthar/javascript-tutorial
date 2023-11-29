@@ -246,3 +246,41 @@ let bike={
 }
 delete bike["prop1"]
 console.log(bike["prop1"])
+
+//Function Vs Method
+//Methos --> It is ntg but object(Key) holding
+//Function as "Value"
+let person={
+    ageCalc: function(birthyr=2003){
+let age=2023-birthyr;
+return age;
+    }
+}
+console.log(person.ageCalc())
+
+//this Keyword
+//In each method we hav an access of special keyword called "this"
+
+//this keyword represnts the object: "calling" the "method"
+//In whch "this" is "present"
+//Exmple
+let obj={
+    firstName: "Arfeen",
+    lastName: "md",
+    city: "Hyderabad",
+    getsum:function(){
+        return `${this.firstName} from ${this.city}`
+    }
+}
+console.log(obj.getsum())
+//forEach method of array
+let dishes=["Biryani","chicken tikka","manchuria"]
+//for loop
+for(let i=0;i<dishes.length;i++){
+console.log(dishes[i])
+}
+console.log("************")
+//foreach
+dishes.forEach(function(ele){
+    console.log(ele)
+})
