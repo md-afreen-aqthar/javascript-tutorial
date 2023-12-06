@@ -195,7 +195,7 @@ console.log(area1(rad,circums));
 // setTimeInterval -->runs repeatedly strting after the interval of time,then repeatedly
 //setTimeOut(func|code,delay,args1,args2,.....)
 function greeting(){
-    console.log("Lets hava look on setInterval , n hw it wrks")
+   // console.log("Lets hava look on setInterval , n hw it wrks")
 }
 setTimeout(greeting,5000) //whch means 1sec=1000 thrfore 5000ms=5sec
 
@@ -284,3 +284,122 @@ console.log("************")
 dishes.forEach(function(ele){
     console.log(ele)
 })
+
+//Object inside array
+let dish=[{frstName: "Arfeen",lastName: "md"},{userName:"Arfeen",age:20}]
+console.log(dish)
+for(let i=0;i<dish.length;i++){
+    console.log(dish[i].frstName)
+}
+
+//Math Object is built in object in js
+let n1=7.6
+console.log(Math.round(n1)); //round to nearest integer
+console.log(Math.floor(n1)); //round to down
+console.log(Math.ceil(n1)) //round to up
+console.log(Math.trunc(n1)) //rmove decimal part
+
+//Function
+//call and apply method
+//we can manually set the value of "this" keyword using call and apply method
+let plain={
+    airline:"Fly India",
+    iatacode: "FI",
+    booking:[],
+    book:function(flightNum,name){
+console.log(`${name} Book Flight on ${this.airline} with Flight Number ${this.iatacode} ${flightNum}`)
+this.booking.push({flight:`${this.airline}`, name:name})
+    }
+}
+plain.book(5523,"Arfeen")
+console.log(plain)
+let childPlain={
+    airline: "Child Plain",
+    iatacode: "CP",
+    booking:[],
+
+}
+let book=plain.book
+book.call(childPlain,234,"Ayaannn")
+console.log(childPlain)
+
+book.apply(childPlain,[4569,"Ayuu"])
+
+//"bind" method
+function greet(){
+    console.log(`Welcome ${this.frstName} and ${this.lastName}`)
+}
+let user={
+    frstName:"Afuu",
+    lastName: "imuu"
+}
+let greet1=greet.bind(user);
+greet1()
+
+//"object/arrays" how "reference" are passed to variable
+let arr44=[5,3,7,6,4,13];
+let getref=arr44
+getref.shift()
+getref[3]=10
+
+console.log(arr44)
+console.log(getref)
+console.log("***********")
+//pass by value
+let getVal=[...arr44]  //... is spread operator whch is used for cpyin
+getVal[6]=8
+console.log(arr44)
+console.log(getVal)
+
+//for-in loop
+let car1={
+    model:2022,
+    color:"blue",
+    company:"Toyota"
+}
+for(let x in car1){
+    console.log(x)
+}
+
+//Gettin html elements using querySelecter/All
+//"querySelector" returns "first elemnt" that much Css Selector
+//To get all mached elemnts we use "querySelectorAll"
+
+//  let res1=document.querySelector('p')
+//  console.log(res1)
+//  let res2=document.querySelectorAll('p')
+//  console.log(res1)
+
+//  //Access Element with class
+//  let ress=document.querySelectorAll('.coding')
+//  console.log(ress)
+//  //Access Elemnt with id
+//  let res3=document.querySelectorAll('#coding')
+//  console.log(res3)
+// //Get elemnt by tagNme
+// let ele=document.getElementsByTagName('p')
+// console.log(ele)
+//Get elemnt by className
+// let ele1=document.getElementsByClassName('coding')
+// console.log(ele1)
+
+//innerText n innrhtml
+let res1=document.querySelector('.coding')
+res1.innerText='<p>This is innerText</p>'
+res1.innerHTML+='<p>This is innerHTML</p>'
+//console.log(res1.innerText)'
+//innrHTML
+//console.log(res1.innerHTML)
+
+//Getting and setting the attribute of elements
+
+let lnk=document.querySelector('a')
+console.log(lnk.getAttribute('href'))
+//for setting new lnk in place of old link
+lnk.setAttribute('href',"https://github.com/md-afreen-aqthar/javascript-tutorial")
+console.log(lnk.getAttribute('href'))
+lnk.innerText="This is my GitHub link"
+
+//Adding the style
+let headin=document.querySelector('h1')
+headin.style.color="red"
