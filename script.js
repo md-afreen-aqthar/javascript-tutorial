@@ -361,45 +361,162 @@ for(let x in car1){
     console.log(x)
 }
 
-//Gettin html elements using querySelecter/All
-//"querySelector" returns "first elemnt" that much Css Selector
-//To get all mached elemnts we use "querySelectorAll"
+// //Gettin html elements using querySelecter/All
+// //"querySelector" returns "first elemnt" that much Css Selector
+// //To get all mached elemnts we use "querySelectorAll"
 
-//  let res1=document.querySelector('p')
-//  console.log(res1)
-//  let res2=document.querySelectorAll('p')
-//  console.log(res1)
+// //  let res1=document.querySelector('p')
+// //  console.log(res1)
+// //  let res2=document.querySelectorAll('p')
+// //  console.log(res1)
 
-//  //Access Element with class
-//  let ress=document.querySelectorAll('.coding')
-//  console.log(ress)
-//  //Access Elemnt with id
-//  let res3=document.querySelectorAll('#coding')
-//  console.log(res3)
-// //Get elemnt by tagNme
-// let ele=document.getElementsByTagName('p')
-// console.log(ele)
-//Get elemnt by className
-// let ele1=document.getElementsByClassName('coding')
-// console.log(ele1)
+// //  //Access Element with class
+// //  let ress=document.querySelectorAll('.coding')
+// //  console.log(ress)
+// //  //Access Elemnt with id
+// //  let res3=document.querySelectorAll('#coding')
+// //  console.log(res3)
+// // //Get elemnt by tagNme
+// // let ele=document.getElementsByTagName('p')
+// // console.log(ele)
+// //Get elemnt by className
+// // let ele1=document.getElementsByClassName('coding')
+// // console.log(ele1)
 
-//innerText n innrhtml
-let res1=document.querySelector('.coding')
-res1.innerText='<p>This is innerText</p>'
-res1.innerHTML+='<p>This is innerHTML</p>'
-//console.log(res1.innerText)'
-//innrHTML
-//console.log(res1.innerHTML)
+// //innerText n innrhtml
+// let res1=document.querySelector('.coding')
+// res1.innerText='<p>This is innerText</p>'
+// res1.innerHTML+='<p>This is innerHTML</p>'
+// //console.log(res1.innerText)'
+// //innrHTML
+// //console.log(res1.innerHTML)
 
-//Getting and setting the attribute of elements
+// //Getting and setting the attribute of elements
 
-let lnk=document.querySelector('a')
-console.log(lnk.getAttribute('href'))
-//for setting new lnk in place of old link
-lnk.setAttribute('href',"https://github.com/md-afreen-aqthar/javascript-tutorial")
-console.log(lnk.getAttribute('href'))
-lnk.innerText="This is my GitHub link"
+// let lnk=document.querySelector('a')
+// console.log(lnk.getAttribute('href'))
+// //for setting new lnk in place of old link
+// lnk.setAttribute('href',"https://github.com/md-afreen-aqthar/javascript-tutorial")
+// console.log(lnk.getAttribute('href'))
+// lnk.innerText="This is my GitHub link"
 
-//Adding the style
-let headin=document.querySelector('h1')
-headin.style.color="red"
+// //Adding the style
+// let headin=document.querySelector('h1')
+// headin.style.color="red"
+// //Add the class
+// headin.classList.add('newClass')
+
+// //Remove the class
+// //headin.classList.remove('newClass')
+// //Replace the class
+// headin.classList.replace('newClass','replacedClass')
+
+// //Parent,Children,Sibling element
+// let parent=document.querySelector('.content')
+// console.log(parent.children)
+
+// //We cannot run foreach loop in HTMLCollections
+// //First convert into array
+// // console.log(Array.from(parent.children))
+// // Array.from(parent.children).forEach(function(element){
+// //     // element.classList.add("Addedclass")
+// // })
+
+// //child Element
+// let childelement=document.querySelector('h2')
+// //find a parent of specific child
+// console.log(childelement.parentElement)
+// //find next element sibling
+// console.log(childelement.nextElementSibling)
+
+//Event Basics (click Event)
+let evnt1=document.querySelector('.ClickHere')
+// console.log(evnt1)
+// evnt1.addEventListener('click',function(){
+//     console.log("clicked")
+// })
+// const ul=document.querySelector('ul')
+// let button=document.querySelector('.ClickHere')
+// button.addEventListener('click',function(){
+//     let li=document.createElement('li')
+//     li.textContent="Something new is added"
+//     ul.append(li) //append for adding at the end
+//     ul.prepend //prepend for addin in the begining
+// })
+// let evnt2=document.querySelectorAll('li')
+// evnt2.forEach(function(element){
+// element.addEventListener('click',function(e){
+//     console.log(e.target)
+//    // e.target.style.textDecoration="line-through"
+//   // e.target.remove()
+// })
+// })
+//copy event
+// let copyRightElement=document.querySelector('.copy')
+//  copyRightElement.addEventListener('copy',()=>{
+//     console.log("You could not copy this")
+//  })
+
+ //form event (Submit Form)
+//  let form =document.querySelector('.sign-up-Form')
+//  let email=document.querySelector('#email')
+//  let password=document.querySelector('#password')
+// form.addEventListener('submit',(e)=>{
+//     e.preventDefault();
+// console.log(form.email.value,form.password.value) //for getting written mail n passwrod
+
+// })
+//Regular Expression
+//It is pattern of Characters used to do pattern matchin
+//Or we can say "Data Validation"
+//Implementation of password validation
+
+//Length atleast 8
+//atleast contain 1 lower case
+//atleast contain 1 uppr case
+// let form =document.querySelector('.sign-up-Form')
+// let email=document.querySelector('#email')
+// let password=document.querySelector('#password')
+// let passwordpattrn="^(?=.*?[A-Z])(?=.*[a-z])(?=.*?[0-9]).{8,}$"
+// form.addEventListener('submit',(e)=>{
+// e.preventDefault()
+// let passwordValue=password.value
+// console.log(passwordValue)
+// let res=passwordValue.match(passwordpattrn)
+// if(res){
+//     console.log("Your Password is strong")
+
+// }
+// else{
+// console.log("Try again")
+// }
+// })
+
+//Keyboard Event
+let form=document.querySelector('.sign-up-Form')
+let user1=document.querySelector('#name')
+let password=document.querySelector('#password')
+let userNamePattern=/^[A-Za-z]{6,12}$/
+form.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    let username=user.value
+    //'test' method return boolean value
+    let result=userNamePattern.test(username)
+    if(result==true){
+        console.log("Username is valid")
+    }
+    else{
+        console.log("Username is not valid")
+    }
+    
+})
+
+//Live feedback
+user1.addEventListener('keyup',(e)=>{
+    if(userNamePattern.test(e.target.value)){
+        console.log("Passed")
+    }
+    else{
+        console.log("Failed")
+    }
+})
