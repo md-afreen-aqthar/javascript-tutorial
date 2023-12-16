@@ -65,7 +65,7 @@ console.log(result)
 //Number method
 let numtype=Number(str) //** {imp}in number method passin string value must b numeric value
 // Arrays
-let arr=['arr','ayy','imuu']
+let arr=['arr','ayy','ayaan']
 // modify array
 arr[0]="arfeen"
 console.log(arr)
@@ -100,7 +100,7 @@ function nameOfFunction(){
 }
 nameOfFunction()
 //functions
-let fun=function(name="imuu",time="night"){ //local variable
+let fun=function(name="Ayaan",time="night"){ //local variable
     console.log(`Welcome ${name} to my function ${time}`)
 }
 fun()
@@ -331,7 +331,7 @@ function greet(){
 }
 let user={
     frstName:"Afuu",
-    lastName: "imuu"
+    lastName: "Ayaan"
 }
 let greet1=greet.bind(user);
 greet1()
@@ -512,11 +512,22 @@ form.addEventListener('submit',(e)=>{
 })
 
 //Live feedback
-user1.addEventListener('keyup',(e)=>{
-    if(userNamePattern.test(e.target.value)){
-        console.log("Passed")
-    }
-    else{
-        console.log("Failed")
-    }
-})
+// user1.addEventListener('keyup',(e)=>{
+//     if(userNamePattern.test(e.target.value)){
+//         console.log("Passed")
+//     }
+//     else{
+//         console.log("Failed")
+//     }
+// })
+
+//Working with arrays
+let ltr=["a","b","c","d"]
+let rev=ltr.reverse()
+console.log(rev)
+//concat
+let concatinate=ltr.concat("Arfeen")
+console.log(concatinate)
+//join
+let lttr=ltr.join('/')
+console.log(lttr)
