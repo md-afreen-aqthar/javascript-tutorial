@@ -529,5 +529,45 @@ console.log(rev)
 let concatinate=ltr.concat("Arfeen")
 console.log(concatinate)
 //join
-let lttr=ltr.join('/')
+let lttr=ltr.join('-')
 console.log(lttr)
+//Slice
+//use dto extrct part of array
+//Array.slice(firstIndex,lastIndexexcluded)
+//Return new Array extrcted element
+let num=[3,5,7,2,4,1,8,6]
+let slce=num.slice(1,4)
+console.log(slce)
+
+//Splice
+//used to add new element in array
+//Array.splice(index,deleteValue,valuetobeadded)
+//Return deleted item in the form of array
+let num1=[1,4,32,65,8,7,3,9,2,5]
+let update=num1.splice(1,2,45)
+console.log("Original Array: "+num1)
+console.log("Updated Array: "+update)
+
+//Working w Array
+//at method
+console.log("First Element " +num1[1])
+console.log("last element is array " +num1[num1.length-1])//last element
+console.log("Element using minus: "+num1.slice(-2)[0])//array -1 helps to return last value of the array -1 return value in array to nrml value without array [0] 
+console.log("using at method: " +num1.at(-2))//at Method
+//at method also works for string also
+let names1="arfeen"
+console.log("String : "+names1[0])
+console.log("String using at: "+names1.at(0))
+console.log("String using at for last: "+names1.at(-1))
+
+//Array Methods
+//Map
+//Create New array from original array By applying
+//Transformation funtion
+let salaries=[2000,5000,8000,9000,6000]
+let newSalary=salaries.map(salary =>{
+let increamntsalary=salaries/2;
+return salary+increamntsalary;
+})
+console.log("Salaries "+newSalary)
+
