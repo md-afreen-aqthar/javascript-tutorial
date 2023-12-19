@@ -564,10 +564,42 @@ console.log("String using at for last: "+names1.at(-1))
 //Map
 //Create New array from original array By applying
 //Transformation funtion
-let salaries=[2000,5000,8000,9000,6000]
+let salaries=[3000,5000,8000,9000,6000]
 let newSalary=salaries.map(salary =>{
-let increamntsalary=salaries/2;
-return salary+increamntsalary;
+let increamntsalary=salaries/2
+return salary+increamntsalary
 })
-console.log("Salaries "+newSalary)
+console.log("Salaries ",salaries)
+console.log("New salary ",newSalary)
 
+//Array Method
+//Filter Method(Used to perform filteration)
+let gifts=["watch","shoes","Shirt","ring"]
+let filterElemnt=gifts.filter(gift=>{
+    if(gift=="watch"||gift=="ring"){
+        return gift
+    }
+})
+console.log(gifts)
+console.log("New gift ",filterElemnt)
+
+// Array Method
+//reduce method
+//run reducer function for each element
+//Array.reduce(function(ttl,currentvalue),initialValue)
+//It return singl value
+//Sum of all element using reduce method
+let sum=[2,3,6,7,8]
+let reducemeth=sum.reduce(function(total,currentvalue){
+    return total+currentvalue;
+},0)
+console.log(reducemeth)
+console.log("original array ",sum)
+
+//"find" method 
+//it return first elemnt we r lookin for..
+let objs=[{id:1,name1:"Arfeen"},{id:2,name1:"Ayaan"}]
+let res1=objs.find(obj=>{
+    return objs.id=1;
+})
+console.log(res1)
