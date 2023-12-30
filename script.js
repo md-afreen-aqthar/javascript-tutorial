@@ -602,4 +602,189 @@ let objs=[{id:1,name1:"Arfeen"},{id:2,name1:"Ayaan"}]
 let res1=objs.find(obj=>{
     return objs.id=1;
 })
-console.log(res1)
+console.log("Find method: ",res1)
+
+//findIndex method
+//execute function for each array element
+//it returns "index" of the array element who "first" passes 
+//Otherwise -1
+let num2=[11,20,24,18,11]
+let firstindx=num2.findIndex(frst=>{
+    if(frst>18){
+        return frst
+    }
+})
+console.log("First Index: ",firstindx)
+
+//"some" n every method
+//some method returns true if any array element pass the tst
+//every method returns true if "all" element pass the test
+let scrs=[110,182,10,19,87]
+let somearray=scrs.some(scr=>{
+    if(scr>150){
+        return scrs
+    }
+
+})
+console.log("Some function: ",somearray)
+
+//Every
+let Everyarray=scrs.every(scr=>{
+    if(scr>150){
+        return scrs
+    }
+
+})
+console.log("Every function: ",Everyarray)
+
+//flat method
+//it create a anew array w ele of arrays
+//"concatenate" into it
+let arrs=[8,4,6,[1,2,3]]
+let arrss=[1,2,3,[5,6,7,8],[2,4,3,6]]
+console.log("Befr Flat: ",arrs)
+let flt=arrs.flat()//by default 1(depth value)
+let flt2=arrss.flat(2)
+console.log("after falt: ",flt)
+console.log("Depth of array is 2: ",flt2)
+
+//flatMap method
+//it is the combination of "map()" method
+let cart=[{
+    name:"Mobile Phone",
+    price:1000,
+    qty:1
+},
+{
+    name:"Iphone",
+    price:60000,
+    qty:1
+}
+]
+let newcart=cart.flatMap(item=>{
+    if(item.name=="Mobile Phone"){
+return [item,{name:"Screen Protector",qty:2,price:0
+    }]
+}
+else{
+    return [item]
+}
+}
+)
+console.log(newcart)
+//sorting array using sort method
+//by default sort method used to sort strings
+//Firstly it conver into string n thn...
+let lttrr=["g","a","t","c"]
+console.log("Sortin String: ",lttrr.sort()); 
+let nums=[4,6,1,-1,-3,-2,-11,88]
+// console.log(nums.sort()) //not sortedd properly 
+//if a-b<0=>a<b=>A,B (Keep order same)
+//if a-b>0=>a>b=>A,B (Switch order )
+console.log("Unsorted: ",nums)
+nums.sort((a,b)=>{
+if(a<b){
+    return -1;
+}
+if(a>b){
+    return 1;
+}
+})
+// console.log("Sortrd: ",nums)
+//another simple way to sort num
+nums.sort((a,b)=>{ //ascending order
+    return a-b
+})
+console.log("Sortrd: ",nums)
+
+nums.sort((a,b)=>{ //descending order
+    return b-a
+})
+console.log("Sortrd in descending: ",nums)
+
+//Date and time
+//Date obj always carry both Date n time
+//Using Date method
+// let currentDate=new Date()
+// console.log("Today Date: ",currentDate)
+// let currentDate=new Date(21,9,28) //(yr,month(0-11),date)
+// console.log(currentDate)
+
+//Date n Time Method
+//Get Full year
+// console.log("Full year: ",currentDate.getFullYear())
+// //Get Month
+// console.log("Get Month: ",currentDate.getMonth())//0-11
+// //Get Day
+// console.log("Get Day: ",currentDate.getDay())//0-6
+// //We can also set Time w date
+// let timendate=new Date(2003,10,28,10,30,5)
+// console.log(timendate)
+// console.log("Get Hours: ",timendate.getHours()) //Get Hours
+// console.log("Get min: ",timendate.getMinutes()) //Get minutes
+// console.log("Get sec: ",timendate.getSeconds()) //Get Seconds
+
+//Digital Clock
+// let hourhand=document.querySelector('.hours');
+// let minhand=document.querySelector('.minutes');
+// let sechand=document.querySelector('seconds');
+// let ticking=function(){
+//     let currentDate=new Date()
+// let getHour=currentDate.getHours();
+// let getmin=currentDate.getMinutes();
+// let getsec=currentDate.getSeconds();
+// hourhand.textContent=getHour;
+// minhand.textContent=getmin;
+// sechand.textContent=getsec;
+// }
+// .setInterval(ticking,1000) //1000=1sec
+
+//Local Storage
+//In Previous todo list task when we refresh we lose our current state data
+//Store n retrieve data from db
+//For now our focus is on local storage
+//Is an api provided by browser to store inside browser
+// console.log(localStorage)
+
+//Local Storage
+//set item 
+//get item 
+//update item
+//Set the item in local Storage
+localStorage.setItem('passion',"programming")
+localStorage.setItem('age',20)
+// console.log(localStorage)
+//Get item local Storage
+// console.log(localStorage.getItem('age'))
+
+// //Update
+// console.log(localStorage.setItem('age',21)) //overwrite prev value
+// localStorage.setItem('ag',18)
+// localStorage.removeItem('ag')
+
+let vehicle=[{
+    company:'Hero',model:2003
+},{company:"Honda",model:2005}]
+console.log(vehicle)
+let stringvehicle=JSON.stringify(vehicle)
+console.log(stringvehicle)
+
+//Get stored item in obj formate
+let storedData=localStorage.getItem(vehicle)
+let objformate=JSON.parse(storedData)
+console.log(objformate)
+
+//Object Oriented Programmin
+//Constructor n "new" function
+// we cannot use arrow function
+// call "Constructor" n new function
+//1."new" obj created empty intially
+//2. "this" ={obj}
+//3. obj linked to prototype
+//4. function automatically return {obj}
+let car=function(color,model){
+    this.color=color;
+    this.model=model;
+}
+let instnt=new car("black",2023);
+console.log(instnt);
